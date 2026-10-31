@@ -4,6 +4,10 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import connectDB from './config/db.js';
 
+import path from 'path';
+import { fileURLToPath } from 'url';
+import fs from 'fs';
+
 // Route imports
 import authRoutes from './routes/authRoutes.js';
 import movieRoutes from './routes/movieRoutes.js';
@@ -79,14 +83,28 @@ app.use('/api/bookings', bookingRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/admin', adminRoutes);
 
-// Welcome root route
-app.get('/', (req, res) => {
-  res.json({
-    message: 'Welcome to IMovies API – Movie Ticket Booking Made Simple',
-    version: '1.0.0',
-    documentation: '/api/health'
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const frontendDist = path.join(__dirname, '../frontend/dist');
+
+if (fs.existsSync(frontendDist)) {
+  app.use(express.static(frontendDist));
+  app.get('*', (req, res, next) => {
+    if (req.originalUrl.startsWith('/api')) {
+      return next();
+    }
+    res.sendFile(path.join(frontendDist, 'index.html'));
   });
-});
+} else {
+  // Welcome root route if frontend is not built
+  app.get('/', (req, res) => {
+    res.json({
+      message: 'Welcome to IMovies API – Movie Ticket Booking Made Simple',
+      version: '1.0.0',
+      documentation: '/api/health'
+    });
+  });
+}
 
 // Error handling middleware
 app.use(notFound);
@@ -94,7 +112,7 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`[IMovies API] Server running in ${process.env.NODE_ENV || 'development'} mode on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`[IMovies API] Server running in ${process.env.NODE_ENV || 'development'} mode on http://0.0.0.0:${PORT}`);
 });
 

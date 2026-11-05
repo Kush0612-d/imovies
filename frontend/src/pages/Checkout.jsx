@@ -162,11 +162,11 @@ const Checkout = () => {
   return (
     <div className="container py-4">
       {/* Top Lock Timer Banner */}
-      <div className="glass-panel p-3 mb-4 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 border-warning border-opacity-50">
+      <div className="glass-panel p-3 mb-4 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 border border-warning border-opacity-50">
         <div className="d-flex align-items-center gap-2">
           <FaClock className="text-warning" size={20} />
           <div>
-            <span className="text-white fw-bold">Seats Temporarily Locked: </span>
+            <span className="text-dark fw-bold">Seats Temporarily Locked: </span>
             <span className="text-muted small">Complete your booking before the timer expires</span>
           </div>
         </div>
@@ -176,7 +176,7 @@ const Checkout = () => {
       </div>
 
       {errorMsg && (
-        <div className="alert alert-danger bg-danger bg-opacity-20 border-danger text-light d-flex align-items-center gap-2 mb-4">
+        <div className="alert alert-danger bg-danger bg-opacity-20 border-danger text-dark d-flex align-items-center gap-2 mb-4">
           <FaExclamationTriangle className="text-danger flex-shrink-0" />
           <span>{errorMsg}</span>
         </div>
@@ -186,13 +186,13 @@ const Checkout = () => {
         {/* Left Column: Order Summary */}
         <div className="col-lg-7">
           <div className="glass-panel p-4 mb-4">
-            <h4 className="fw-bold text-white mb-3 d-flex align-items-center gap-2">
+            <h4 className="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
               <FaTicketAlt className="text-danger" />
               <span>Order Summary</span>
             </h4>
 
             {/* Movie Info */}
-            <div className="d-flex gap-3 pb-3 border-bottom border-secondary border-opacity-25">
+            <div className="d-flex gap-3 pb-3 border-bottom border-light-subtle">
               <img
                 src={movie.poster}
                 alt={movie.title}
@@ -200,22 +200,22 @@ const Checkout = () => {
                 style={{ width: '70px', height: '100px', objectFit: 'cover' }}
               />
               <div>
-                <h5 className="fw-bold text-white mb-1">{movie.title}</h5>
+                <h5 className="fw-bold text-dark mb-1">{movie.title}</h5>
                 <div className="d-flex gap-2 text-muted small mb-1">
                   <span className="badge bg-secondary">{movie.language}</span>
-                  <span className="badge bg-dark border border-secondary">{movie.certification}</span>
+                  <span className="badge bg-light text-secondary border">{movie.certification}</span>
                   <span>{movie.duration ? `${Math.floor(movie.duration / 60)}h ${movie.duration % 60}m` : '2h 15m'}</span>
                 </div>
-                <div className="text-light small">{cinema.name} ({cinema.city})</div>
+                <div className="text-secondary small">{cinema.name} ({cinema.city})</div>
                 <small className="text-muted">{screen.screenName || 'Audi 1'}</small>
               </div>
             </div>
 
             {/* Show Details */}
-            <div className="row g-3 py-3 border-bottom border-secondary border-opacity-25 small">
+            <div className="row g-3 py-3 border-bottom border-light-subtle small">
               <div className="col-4">
                 <div className="text-muted">Date</div>
-                <div className="fw-bold text-white">{showData.showDate}</div>
+                <div className="fw-bold text-dark">{showData.showDate}</div>
               </div>
               <div className="col-4">
                 <div className="text-muted">Time</div>
@@ -231,23 +231,23 @@ const Checkout = () => {
 
             {/* Price Breakdown */}
             <div className="pt-3">
-              <h6 className="fw-bold text-white mb-3">Price Breakdown</h6>
+              <h6 className="fw-bold text-dark mb-3">Price Breakdown</h6>
               <div className="d-flex justify-content-between text-muted small mb-2">
                 <span>Base Ticket Price ({selectedSeats.length} seats)</span>
-                <span className="text-white">₹{pricing.baseAmount}</span>
+                <span className="text-dark fw-semibold">₹{pricing.baseAmount}</span>
               </div>
               <div className="d-flex justify-content-between text-muted small mb-2">
                 <span>Convenience Fee (Booking & Maintenance)</span>
-                <span className="text-white">₹{pricing.convenienceFee}</span>
+                <span className="text-dark fw-semibold">₹{pricing.convenienceFee}</span>
               </div>
               <div className="d-flex justify-content-between text-muted small mb-2">
                 <span>Integrated GST (18%)</span>
-                <span className="text-white">₹{pricing.taxAmount}</span>
+                <span className="text-dark fw-semibold">₹{pricing.taxAmount}</span>
               </div>
-              <hr className="border-secondary border-opacity-25" />
+              <hr className="border-light-subtle" />
               <div className="d-flex justify-content-between align-items-center">
-                <span className="fw-bold text-white fs-5">Total Amount Payable</span>
-                <span className="fw-bold text-white fs-4">₹{pricing.totalAmount}</span>
+                <span className="fw-bold text-dark fs-5">Total Amount Payable</span>
+                <span className="fw-bold text-primary fs-4">₹{pricing.totalAmount}</span>
               </div>
             </div>
           </div>
@@ -256,13 +256,13 @@ const Checkout = () => {
         {/* Right Column: Payment Gateway Simulation */}
         <div className="col-lg-5">
           <div className="glass-panel p-4">
-            <h5 className="fw-bold text-white mb-3 d-flex align-items-center gap-2">
+            <h5 className="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
               <FaLock className="text-success" />
               <span>Select Payment Method</span>
             </h5>
 
             {/* Academic Mode Notice */}
-            <div className="p-2 mb-3 rounded bg-black bg-opacity-40 border border-secondary border-opacity-25 small text-muted">
+            <div className="p-2 mb-3 rounded bg-light border border-light-subtle small text-muted">
               🔒 <strong>IMovies Sandbox Gateway</strong> (Instant secure test authorization)
             </div>
 
@@ -272,7 +272,7 @@ const Checkout = () => {
                 className={`p-3 rounded border d-flex align-items-center gap-3 cursor-pointer transition-all ${
                   paymentMethod === 'mock_upi'
                     ? 'border-primary bg-primary bg-opacity-10'
-                    : 'border-secondary border-opacity-25 bg-dark'
+                    : 'border-light-subtle bg-light'
                 }`}
                 style={{ cursor: 'pointer' }}
               >
@@ -284,7 +284,7 @@ const Checkout = () => {
                 />
                 <FaMobileAlt className="text-primary fs-5" />
                 <div className="flex-grow-1">
-                  <div className="text-white fw-bold small">UPI (Google Pay / PhonePe / Paytm)</div>
+                  <div className="text-dark fw-bold small">UPI (Google Pay / PhonePe / Paytm)</div>
                   <div className="text-muted small" style={{ fontSize: '0.75rem' }}>Instant authorization</div>
                 </div>
               </label>
@@ -293,7 +293,7 @@ const Checkout = () => {
                 className={`p-3 rounded border d-flex align-items-center gap-3 cursor-pointer transition-all ${
                   paymentMethod === 'mock_card'
                     ? 'border-primary bg-primary bg-opacity-10'
-                    : 'border-secondary border-opacity-25 bg-dark'
+                    : 'border-light-subtle bg-light'
                 }`}
                 style={{ cursor: 'pointer' }}
               >
@@ -305,7 +305,7 @@ const Checkout = () => {
                 />
                 <FaCreditCard className="text-warning fs-5" />
                 <div className="flex-grow-1">
-                  <div className="text-white fw-bold small">Credit / Debit Card</div>
+                  <div className="text-dark fw-bold small">Credit / Debit Card</div>
                   <div className="text-muted small" style={{ fontSize: '0.75rem' }}>Visa, Mastercard, RuPay</div>
                 </div>
               </label>
@@ -314,7 +314,7 @@ const Checkout = () => {
                 className={`p-3 rounded border d-flex align-items-center gap-3 cursor-pointer transition-all ${
                   paymentMethod === 'mock_netbanking'
                     ? 'border-primary bg-primary bg-opacity-10'
-                    : 'border-secondary border-opacity-25 bg-dark'
+                    : 'border-light-subtle bg-light'
                 }`}
                 style={{ cursor: 'pointer' }}
               >
@@ -326,7 +326,7 @@ const Checkout = () => {
                 />
                 <FaUniversity className="text-success fs-5" />
                 <div className="flex-grow-1">
-                  <div className="text-white fw-bold small">Net Banking</div>
+                  <div className="text-dark fw-bold small">Net Banking</div>
                   <div className="text-muted small" style={{ fontSize: '0.75rem' }}>All Major Indian Banks</div>
                 </div>
               </label>

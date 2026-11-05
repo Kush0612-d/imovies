@@ -24,7 +24,7 @@ const ComingSoon = () => {
   return (
     <div className="container py-4">
       <div className="mb-4">
-        <h2 className="fw-bold text-white mb-1 d-flex align-items-center gap-2">
+        <h2 className="fw-bold text-dark mb-1 d-flex align-items-center gap-2">
           <FaCalendarAlt className="text-warning" />
           <span>Coming Soon to Cinemas</span>
         </h2>
@@ -47,7 +47,7 @@ const ComingSoon = () => {
         </div>
       ) : (
         <div className="glass-panel text-center py-5">
-          <h4 className="text-white">No upcoming releases scheduled yet</h4>
+          <h4 className="text-dark">No upcoming releases scheduled yet</h4>
           <p className="text-muted">Stay tuned for new blockbuster announcements!</p>
         </div>
       )}

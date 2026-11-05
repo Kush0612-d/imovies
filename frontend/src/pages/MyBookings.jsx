@@ -62,7 +62,7 @@ const MyBookings = () => {
     <div className="container py-4">
       <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
         <div>
-          <h2 className="fw-bold text-white mb-1 d-flex align-items-center gap-2">
+          <h2 className="fw-bold text-dark mb-1 d-flex align-items-center gap-2">
             <FaTicketAlt className="text-danger" />
             <span>My Bookings</span>
           </h2>
@@ -128,7 +128,7 @@ const MyBookings = () => {
                   {/* Movie and Cinema Info */}
                   <div className="col">
                     <div className="d-flex flex-wrap align-items-center gap-2 mb-1">
-                      <h5 className="fw-bold text-white mb-0">{movie.title || 'Movie'}</h5>
+                      <h5 className="fw-bold text-dark mb-0">{movie.title || 'Movie'}</h5>
                       <span className={`badge ${isConfirmed ? 'bg-success' : 'bg-danger'} bg-opacity-25 ${isConfirmed ? 'text-success' : 'text-danger'}`}>
                         {b.bookingStatus?.toUpperCase()}
                       </span>
@@ -140,13 +140,13 @@ const MyBookings = () => {
                       <span>• {screen.screenName || 'Audi 1'}</span>
                     </div>
 
-                    <div className="d-flex flex-wrap gap-3 small text-light">
+                    <div className="d-flex flex-wrap gap-3 small text-dark">
                       <span className="d-flex align-items-center gap-1">
                         <FaCalendarAlt className="text-danger" /> {b.createdAt?.slice(0, 10)}
                       </span>
-                      <span>Seats: <strong className="text-warning">{b.seats?.map(s => s.seatNumber).join(', ')}</strong></span>
-                      <span>Total: <strong className="text-white">₹{b.totalAmount}</strong></span>
-                      <span className="text-muted">Ref: <strong className="font-monospace text-light">{b.bookingId}</strong></span>
+                      <span>Seats: <strong className="text-danger">{b.seats?.map(s => s.seatNumber).join(', ')}</strong></span>
+                      <span>Total: <strong className="text-dark">₹{b.totalAmount}</strong></span>
+                      <span className="text-muted">Ref: <strong className="font-monospace text-dark">{b.bookingId}</strong></span>
                     </div>
                   </div>
 
@@ -176,7 +176,7 @@ const MyBookings = () => {
       ) : (
         <div className="glass-panel text-center py-5">
           <FaTicketAlt className="text-muted mb-3" size={48} />
-          <h4 className="text-white">No Bookings Found</h4>
+          <h4 className="text-dark">No Bookings Found</h4>
           <p className="text-muted">You haven't made any movie bookings under this tab yet.</p>
           <Link to="/movies" className="btn btn-cinema-primary mt-2">
             Browse Movies & Book Now
@@ -188,13 +188,13 @@ const MyBookings = () => {
       {selectedTicket && (
         <div
           className="modal fade show d-block"
-          style={{ backgroundColor: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(5px)', zIndex: 1060 }}
+          style={{ backgroundColor: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(5px)', zIndex: 1060 }}
           onClick={() => setSelectedTicket(null)}
         >
           <div className="modal-dialog modal-dialog-centered modal-lg" onClick={(e) => e.stopPropagation()}>
             <div className="modal-content bg-transparent border-0">
               <div className="text-end mb-2">
-                <button className="btn btn-sm btn-light rounded-circle" onClick={() => setSelectedTicket(null)}>
+                <button className="btn btn-sm btn-light rounded-circle shadow-sm" onClick={() => setSelectedTicket(null)}>
                   <FaTimes />
                 </button>
               </div>
@@ -208,13 +208,13 @@ const MyBookings = () => {
       {cancelModal.open && (
         <div
           className="modal fade show d-block"
-          style={{ backgroundColor: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(5px)', zIndex: 1060 }}
+          style={{ backgroundColor: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(5px)', zIndex: 1060 }}
           onClick={() => setCancelModal({ open: false, bookingId: null })}
         >
           <div className="modal-dialog modal-dialog-centered" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-content bg-dark text-light border border-danger border-opacity-50">
-              <div className="modal-header border-secondary border-opacity-25">
-                <h5 className="modal-title fw-bold text-white d-flex align-items-center gap-2">
+            <div className="modal-content bg-white text-dark border border-danger border-opacity-50 shadow-lg">
+              <div className="modal-header border-light-subtle">
+                <h5 className="modal-title fw-bold text-dark d-flex align-items-center gap-2">
                   <FaExclamationTriangle className="text-danger" /> Cancel Booking
                 </h5>
                 <button

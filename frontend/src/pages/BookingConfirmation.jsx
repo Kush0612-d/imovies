@@ -40,7 +40,7 @@ const BookingConfirmation = () => {
     return (
       <div className="container py-5 text-center">
         <div className="glass-panel p-5">
-          <h4 className="text-white">Booking not found</h4>
+          <h4 className="text-dark">Booking not found</h4>
           <Link to="/" className="btn btn-cinema-secondary mt-3">
             Go to Homepage
           </Link>
@@ -54,12 +54,12 @@ const BookingConfirmation = () => {
       {/* Success Banner */}
       <div className="text-center mb-4">
         <div
-          className="d-inline-flex align-items-center justify-content-center rounded-circle bg-success bg-opacity-20 text-success p-3 mb-2"
+          className="d-inline-flex align-items-center justify-content-center rounded-circle bg-success bg-opacity-20 text-success p-3 mb-2 shadow-sm"
           style={{ width: '70px', height: '70px' }}
         >
           <FaCheckCircle size={36} />
         </div>
-        <h2 className="fw-black text-white mb-1">Booking Confirmed!</h2>
+        <h2 className="fw-black text-dark mb-1">Booking Confirmed!</h2>
         <p className="text-muted small">
           Your cinema seats have been secured. Here is your official digital ticket.
         </p>

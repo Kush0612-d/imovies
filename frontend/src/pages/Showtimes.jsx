@@ -104,10 +104,10 @@ const Showtimes = () => {
               style={{ width: '50px', height: '70px', objectFit: 'cover' }}
             />
             <div>
-              <h4 className="fw-bold text-white mb-1">{movie.title}</h4>
+              <h4 className="fw-bold text-dark mb-1">{movie.title}</h4>
               <div className="d-flex gap-2 text-muted small">
                 <span className="badge bg-secondary">{movie.language}</span>
-                <span className="badge bg-dark border border-secondary">{movie.certification}</span>
+                <span className="badge bg-light text-secondary border">{movie.certification}</span>
                 <span>{Math.floor(movie.duration / 60)}h {movie.duration % 60}m</span>
                 <span>• {movie.genre?.join(', ')}</span>
               </div>
@@ -147,7 +147,7 @@ const Showtimes = () => {
                 className={`btn text-center px-3 py-2 flex-shrink-0 transition-all ${
                   isSelected
                     ? 'btn-cinema-primary shadow'
-                    : 'btn-cinema-secondary text-light'
+                    : 'btn-cinema-secondary text-dark'
                 }`}
                 style={{ minWidth: '95px' }}
               >
@@ -162,7 +162,7 @@ const Showtimes = () => {
       {/* Cinemas & Showtimes List */}
       <div>
         <div className="d-flex justify-content-between align-items-center mb-3">
-          <h5 className="fw-bold text-white mb-0 d-flex align-items-center gap-2">
+          <h5 className="fw-bold text-dark mb-0 d-flex align-items-center gap-2">
             <FaMapMarkerAlt className="text-danger" />
             <span>Cinemas in {selectedCity}</span>
           </h5>
@@ -180,12 +180,12 @@ const Showtimes = () => {
                 <div className="row g-3 align-items-center">
                   {/* Cinema Info */}
                   <div className="col-lg-4 col-md-5">
-                    <h5 className="fw-bold text-white mb-1">{cinema.name}</h5>
+                    <h5 className="fw-bold text-dark mb-1">{cinema.name}</h5>
                     <p className="text-muted small mb-2">{cinema.address}</p>
                     {/* Facilities Tags */}
                     <div className="d-flex flex-wrap gap-1">
                       {cinema.facilities?.slice(0, 3).map((f, i) => (
-                        <span key={i} className="badge bg-dark border border-secondary text-muted" style={{ fontSize: '0.7rem' }}>
+                        <span key={i} className="badge bg-light text-secondary border" style={{ fontSize: '0.7rem' }}>
                           {f}
                         </span>
                       ))}
@@ -206,10 +206,10 @@ const Showtimes = () => {
                             <span className="fw-bold text-success fs-6 d-flex align-items-center gap-1">
                               <FaClock size={12} /> {show.startTime}
                             </span>
-                            <small className="text-light text-truncate" style={{ fontSize: '0.75rem', maxWidth: '140px' }}>
+                            <small className="text-secondary text-truncate" style={{ fontSize: '0.75rem', maxWidth: '140px' }}>
                               {show.screen?.screenName || 'Audi 1'}
                             </small>
-                            <div className="d-flex justify-content-between align-items-center mt-1 border-top border-secondary border-opacity-25 pt-1 w-100">
+                            <div className="d-flex justify-content-between align-items-center mt-1 border-top border-light-subtle pt-1 w-100">
                               <span className="text-warning fw-semibold" style={{ fontSize: '0.72rem' }}>
                                 ₹{show.ticketPrice?.regular || 220}+
                               </span>
@@ -229,7 +229,7 @@ const Showtimes = () => {
         ) : (
           <div className="glass-panel text-center py-5">
             <FaFilm className="text-muted mb-3" size={40} />
-            <h5 className="text-white">No shows scheduled for {selectedDate} in {selectedCity}</h5>
+            <h5 className="text-dark">No shows scheduled for {selectedDate} in {selectedCity}</h5>
             <p className="text-muted small mb-3">
               Try selecting another date or check other nearby cities.
             </p>

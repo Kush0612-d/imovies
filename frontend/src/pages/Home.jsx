@@ -83,7 +83,7 @@ const Home = () => {
         <div className="d-flex align-items-center gap-2">
           <FaMapMarkerAlt className="text-danger" size={20} />
           <div>
-            <span className="text-white fw-bold">Currently exploring cinemas in </span>
+            <span className="text-dark fw-bold">Currently exploring cinemas in </span>
             <span className="badge bg-danger fs-6">{selectedCity}</span>
           </div>
         </div>
@@ -159,7 +159,7 @@ const Home = () => {
       <section className="mb-5">
         <div className="d-flex justify-content-between align-items-center mb-4">
           <div>
-            <h3 className="fw-bold text-white mb-0 d-flex align-items-center gap-2">
+            <h3 className="fw-bold text-dark mb-0 d-flex align-items-center gap-2">
               <span className="badge-now-showing badge p-2">NOW SHOWING</span>
               <span>In Cinemas</span>
             </h3>
@@ -188,7 +188,7 @@ const Home = () => {
         <section className="mb-5">
           <div className="d-flex justify-content-between align-items-center mb-4">
             <div>
-              <h3 className="fw-bold text-white mb-0 d-flex align-items-center gap-2">
+              <h3 className="fw-bold text-dark mb-0 d-flex align-items-center gap-2">
                 <FaFire className="text-danger" />
                 <span>Trending This Week</span>
               </h3>
@@ -217,7 +217,7 @@ const Home = () => {
       <section className="mb-5">
         <div className="d-flex justify-content-between align-items-center mb-4">
           <div>
-            <h3 className="fw-bold text-white mb-0 d-flex align-items-center gap-2">
+            <h3 className="fw-bold text-dark mb-0 d-flex align-items-center gap-2">
               <FaCalendarAlt className="text-warning" />
               <span>Coming Soon</span>
             </h3>
@@ -246,7 +246,7 @@ const Home = () => {
         <section className="mb-5">
           <div className="d-flex justify-content-between align-items-center mb-4">
             <div>
-              <h3 className="fw-bold text-white mb-0 d-flex align-items-center gap-2">
+              <h3 className="fw-bold text-dark mb-0 d-flex align-items-center gap-2">
                 <FaStar className="text-warning" />
                 <span>Top Rated & Popular</span>
               </h3>
@@ -276,7 +276,7 @@ const Home = () => {
         <div className="row justify-content-center">
           <div className="col-lg-8">
             <FaFilm className="text-danger mb-3" size={40} />
-            <h2 className="fw-bold text-white mb-2">Cinema Experience Elevated</h2>
+            <h2 className="fw-bold text-dark mb-2">Cinema Experience Elevated</h2>
             <p className="text-muted mb-4">
               Select your favorite cinema in <strong>{selectedCity}</strong>, choose your preferred recliner
               or regular seats, and get instant digital tickets with secure QR validation right on your device.

@@ -26,7 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark navbar-imovies sticky-top py-2 py-lg-3">
+    <nav className="navbar navbar-expand-lg navbar-light navbar-imovies sticky-top py-2 py-lg-3">
       <div className="container">
         {/* Brand Logo */}
         <Link to="/" className="navbar-brand brand-logo text-decoration-none">
@@ -52,14 +52,14 @@ const Navbar = () => {
               className="position-absolute mt-2 py-2 shadow-lg glass-panel z-3"
               style={{ minWidth: '180px', top: '100%', left: 0 }}
             >
-              <div className="px-3 py-1 text-muted small fw-bold text-uppercase border-bottom border-secondary mb-1">
+              <div className="px-3 py-1 text-muted small fw-bold text-uppercase border-bottom border-light-subtle mb-1">
                 Select City
               </div>
               {availableCities.map((city) => (
                 <button
                   key={city}
-                  className={`dropdown-item px-3 py-2 text-start w-100 border-0 bg-transparent text-light d-flex justify-content-between align-items-center ${
-                    selectedCity === city ? 'text-primary fw-bold' : ''
+                  className={`dropdown-item px-3 py-2 text-start w-100 border-0 bg-transparent d-flex justify-content-between align-items-center ${
+                    selectedCity === city ? 'text-primary fw-bold' : 'text-dark'
                   }`}
                   onClick={() => {
                     changeCity(city);
@@ -67,7 +67,7 @@ const Navbar = () => {
                   }}
                 >
                   <span>{city}</span>
-                  {selectedCity === city && <span className="text-danger">✓</span>}
+                  {selectedCity === city && <span className="text-danger fw-bold">✓</span>}
                 </button>
               ))}
             </div>
@@ -91,7 +91,7 @@ const Navbar = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `nav-link px-3 ${isActive ? 'active text-white fw-bold' : 'text-light'}`
+                  `nav-link px-3 ${isActive ? 'active' : ''}`
                 }
                 onClick={() => setNavOpen(false)}
                 end
@@ -103,7 +103,7 @@ const Navbar = () => {
               <NavLink
                 to="/movies"
                 className={({ isActive }) =>
-                  `nav-link px-3 ${isActive ? 'active text-white fw-bold' : 'text-light'}`
+                  `nav-link px-3 ${isActive ? 'active' : ''}`
                 }
                 onClick={() => setNavOpen(false)}
               >
@@ -114,7 +114,7 @@ const Navbar = () => {
               <NavLink
                 to="/coming-soon"
                 className={({ isActive }) =>
-                  `nav-link px-3 ${isActive ? 'active text-white fw-bold' : 'text-light'}`
+                  `nav-link px-3 ${isActive ? 'active' : ''}`
                 }
                 onClick={() => setNavOpen(false)}
               >
@@ -126,7 +126,7 @@ const Navbar = () => {
                 <NavLink
                   to="/my-bookings"
                   className={({ isActive }) =>
-                    `nav-link px-3 ${isActive ? 'active text-white fw-bold' : 'text-light'}`
+                    `nav-link px-3 ${isActive ? 'active' : ''}`
                   }
                   onClick={() => setNavOpen(false)}
                 >
@@ -140,11 +140,11 @@ const Navbar = () => {
                 <NavLink
                   to="/admin"
                   className={({ isActive }) =>
-                    `nav-link px-3 ${isActive ? 'active text-warning fw-bold' : 'text-warning'}`
+                    `nav-link px-3 ${isActive ? 'active text-primary fw-bold' : ''}`
                   }
                   onClick={() => setNavOpen(false)}
                 >
-                  <FaShieldAlt className="me-1" />
+                  <FaShieldAlt className="me-1 text-primary" />
                   Admin
                 </NavLink>
               </li>
@@ -175,14 +175,14 @@ const Navbar = () => {
                   className="dropdown-menu dropdown-menu-end shadow-lg glass-panel py-2"
                   aria-labelledby="userDropdown"
                 >
-                  <li className="px-3 py-1 border-bottom border-secondary mb-1">
-                    <div className="fw-bold text-white">{user?.name}</div>
+                  <li className="px-3 py-1 border-bottom border-light-subtle mb-1">
+                    <div className="fw-bold text-dark">{user?.name}</div>
                     <small className="text-muted">{user?.email}</small>
                   </li>
                   <li>
                     <Link
                       to="/profile"
-                      className="dropdown-item text-light py-2"
+                      className="dropdown-item py-2"
                       onClick={() => setNavOpen(false)}
                     >
                       <FaUserCircle className="me-2 text-primary" /> Profile & Settings
@@ -191,7 +191,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       to="/my-bookings"
-                      className="dropdown-item text-light py-2"
+                      className="dropdown-item py-2"
                       onClick={() => setNavOpen(false)}
                     >
                       <FaTicketAlt className="me-2 text-danger" /> My Bookings
@@ -201,7 +201,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to="/admin"
-                        className="dropdown-item text-warning py-2"
+                        className="dropdown-item text-primary py-2"
                         onClick={() => setNavOpen(false)}
                       >
                         <FaShieldAlt className="me-2" /> Admin Dashboard
@@ -209,7 +209,7 @@ const Navbar = () => {
                     </li>
                   )}
                   <li>
-                    <hr className="dropdown-divider border-secondary my-1" />
+                    <hr className="dropdown-divider border-light-subtle my-1" />
                   </li>
                   <li>
                     <button

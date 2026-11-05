@@ -138,7 +138,7 @@ const SeatBooking = () => {
     return (
       <div className="container py-5 text-center">
         <div className="glass-panel p-5">
-          <h4 className="text-white">Show details not found</h4>
+          <h4 className="text-dark">Show details not found</h4>
           <Link to="/movies" className="btn btn-cinema-secondary mt-3">
             Back to Movies
           </Link>
@@ -158,9 +158,9 @@ const SeatBooking = () => {
           >
             <FaArrowLeft size={12} /> Back to Showtimes
           </button>
-          <h3 className="fw-bold text-white mb-0">{showData.movie?.title}</h3>
+          <h3 className="fw-bold text-dark mb-0">{showData.movie?.title}</h3>
           <div className="d-flex flex-wrap gap-2 text-muted small mt-1">
-            <span className="text-white fw-semibold">{showData.cinema?.name}</span>
+            <span className="text-dark fw-semibold">{showData.cinema?.name}</span>
             <span>• {showData.screen?.screenName || 'Audi 1'}</span>
             <span>• {showData.showDate}</span>
             <span className="text-success fw-bold">• {showData.startTime}</span>
@@ -182,7 +182,7 @@ const SeatBooking = () => {
             <span>Booked</span>
           </div>
           <div className="seat-legend-item">
-            <div className="legend-sample bg-dark border border-warning" style={{ borderTop: '3px solid #f59e0b' }}></div>
+            <div className="legend-sample bg-light border border-warning" style={{ borderTop: '3.5px solid #f59e0b' }}></div>
             <span>Premium</span>
           </div>
         </div>
@@ -248,7 +248,7 @@ const SeatBooking = () => {
 
         <div className="text-muted small mt-3">
           Row A & B: <span className="text-warning fw-semibold">Premium Recliners (₹{showData.ticketPrice?.premium || 350})</span> |
-          Row C to H: <span className="text-light fw-semibold">Regular Standard (₹{showData.ticketPrice?.regular || 220})</span>
+          Row C to H: <span className="text-dark fw-semibold">Regular Standard (₹{showData.ticketPrice?.regular || 220})</span>
         </div>
       </div>
 
@@ -262,7 +262,7 @@ const SeatBooking = () => {
               {selectedSeats.length > 0 ? (
                 <div className="d-flex flex-wrap gap-1">
                   {selectedSeats.map((s) => (
-                    <span key={s.seatNumber} className="badge bg-purple text-white px-2 py-1" style={{ backgroundColor: '#8b5cf6' }}>
+                    <span key={s.seatNumber} className="badge bg-primary text-white px-2 py-1 shadow-sm">
                       {s.seatNumber} (₹{s.price})
                     </span>
                   ))}
@@ -280,7 +280,7 @@ const SeatBooking = () => {
           <div className="col-md-5 col-12 d-flex justify-content-md-end align-items-center gap-3">
             <div className="text-md-end">
               <div className="small text-muted">Estimated Total</div>
-              <div className="fs-4 fw-bold text-white">₹{grandTotal}</div>
+              <div className="fs-4 fw-bold text-dark">₹{grandTotal}</div>
             </div>
 
             <button

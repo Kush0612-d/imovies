@@ -352,3 +352,4 @@ export const sampleCinemas = [
     isActive: true
   }
 ];
+

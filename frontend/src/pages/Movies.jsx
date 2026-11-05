@@ -70,7 +70,7 @@ const Movies = () => {
       {/* Page Header */}
       <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
         <div>
-          <h2 className="fw-bold text-white mb-1 d-flex align-items-center gap-2">
+          <h2 className="fw-bold text-dark mb-1 d-flex align-items-center gap-2">
             <FaFilm className="text-danger" />
             <span>Discover Movies</span>
           </h2>
@@ -209,7 +209,7 @@ const Movies = () => {
       ) : (
         <div className="text-center py-5 glass-panel">
           <FaFilm className="text-muted mb-3" size={48} />
-          <h4 className="text-white">No Movies Found</h4>
+          <h4 className="text-dark">No Movies Found</h4>
           <p className="text-muted">
             We couldn't find any movie matching your current filters and search query.
           </p>

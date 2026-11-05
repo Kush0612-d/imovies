@@ -56,12 +56,12 @@ const Login = () => {
                 <FaFilm className="text-danger" />
                 <span>IMovies</span>
               </div>
-              <h4 className="fw-bold text-white mb-1">Welcome Back</h4>
+              <h4 className="fw-bold text-dark mb-1">Welcome Back</h4>
               <p className="text-muted small">Sign in to your IMovies cinema account</p>
             </div>
 
             {error && (
-              <div className="alert alert-danger bg-danger bg-opacity-20 border-danger text-light small d-flex align-items-center gap-2 mb-3">
+              <div className="alert alert-danger bg-danger bg-opacity-20 border-danger text-dark small d-flex align-items-center gap-2 mb-3">
                 <FaExclamationTriangle className="text-danger flex-shrink-0" />
                 <span>{error}</span>
               </div>
@@ -72,7 +72,7 @@ const Login = () => {
               <div className="mb-3">
                 <label className="form-label text-muted small fw-semibold">Email Address</label>
                 <div className="input-group">
-                  <span className="input-group-text bg-dark border-secondary border-opacity-25 text-muted">
+                  <span className="input-group-text bg-light border-light-subtle text-muted">
                     <FaEnvelope />
                   </span>
                   <input
@@ -91,7 +91,7 @@ const Login = () => {
                   <label className="form-label text-muted small fw-semibold mb-0">Password</label>
                 </div>
                 <div className="input-group">
-                  <span className="input-group-text bg-dark border-secondary border-opacity-25 text-muted">
+                  <span className="input-group-text bg-light border-light-subtle text-muted">
                     <FaLock />
                   </span>
                   <input
@@ -121,7 +121,7 @@ const Login = () => {
             </form>
 
             {/* Quick Demo Logins for Academic Evaluators */}
-            <div className="p-3 mb-4 rounded bg-dark border border-secondary border-opacity-25 text-center">
+            <div className="p-3 mb-4 rounded bg-light border border-light-subtle text-center">
               <div className="small text-muted mb-2 fw-semibold">One-Click Demo Accounts:</div>
               <div className="d-flex justify-content-center gap-2">
                 <button

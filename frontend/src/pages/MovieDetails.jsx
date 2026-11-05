@@ -188,15 +188,15 @@ const MovieDetails = () => {
           <div className="col-lg-8">
             {/* Synopsis */}
             <div className="glass-panel p-4 mb-4">
-              <h4 className="fw-bold text-white mb-3">About the Movie</h4>
-              <p className="text-light text-opacity-80 lead" style={{ fontSize: '1.05rem', lineHeight: '1.7' }}>
+              <h4 className="fw-bold text-dark mb-3">About the Movie</h4>
+              <p className="text-secondary lead" style={{ fontSize: '1.05rem', lineHeight: '1.7' }}>
                 {movie.description}
               </p>
             </div>
 
             {/* Cast & Crew */}
             <div className="glass-panel p-4 mb-4">
-              <h4 className="fw-bold text-white mb-3 d-flex align-items-center gap-2">
+              <h4 className="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
                 <FaUsers className="text-danger" />
                 <span>Cast & Star Cast</span>
               </h4>
@@ -205,14 +205,14 @@ const MovieDetails = () => {
                 {movie.cast && movie.cast.length > 0 ? (
                   movie.cast.map((actor, idx) => (
                     <div key={idx} className="col-6 col-sm-4 col-md-3">
-                      <div className="p-3 rounded bg-dark border border-secondary border-opacity-25 text-center">
+                      <div className="p-3 rounded bg-light border border-light-subtle text-center">
                         <div
-                          className="rounded-circle mx-auto mb-2 d-flex align-items-center justify-content-center text-white fw-bold"
+                          className="rounded-circle mx-auto mb-2 d-flex align-items-center justify-content-center text-white fw-bold shadow-sm"
                           style={{ width: '48px', height: '48px', background: 'linear-gradient(135deg, #ef4444, #8b5cf6)' }}
                         >
                           {actor.charAt(0)}
                         </div>
-                        <div className="fw-semibold text-white small text-truncate">{actor}</div>
+                        <div className="fw-semibold text-dark small text-truncate">{actor}</div>
                         <small className="text-muted" style={{ fontSize: '0.75rem' }}>Actor</small>
                       </div>
                     </div>
@@ -223,11 +223,11 @@ const MovieDetails = () => {
               </div>
 
               {/* Director */}
-              <div className="mt-4 pt-3 border-top border-secondary border-opacity-25 d-flex align-items-center gap-3">
+              <div className="mt-4 pt-3 border-top border-light-subtle d-flex align-items-center gap-3">
                 <FaUserTie className="text-primary" size={24} />
                 <div>
                   <div className="small text-muted">Directed By</div>
-                  <div className="fw-bold text-white fs-6">{movie.director || 'N/A'}</div>
+                  <div className="fw-bold text-dark fs-6">{movie.director || 'N/A'}</div>
                 </div>
               </div>
             </div>
@@ -236,7 +236,7 @@ const MovieDetails = () => {
           {/* Right sidebar quick cinema check */}
           <div className="col-lg-4">
             <div className="glass-panel p-4 sticky-top" style={{ top: '90px' }}>
-              <h5 className="fw-bold text-white mb-3 d-flex align-items-center gap-2">
+              <h5 className="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
                 <FaMapMarkerAlt className="text-danger" />
                 <span>Cinemas in {selectedCity}</span>
               </h5>

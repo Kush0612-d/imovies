@@ -25,14 +25,14 @@ const TrailerModal = ({ isOpen, onClose, trailerUrl, title }) => {
         className="modal-dialog modal-dialog-centered modal-lg"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="modal-content bg-dark text-light border border-secondary border-opacity-50 shadow-lg">
-          <div className="modal-header border-secondary border-opacity-25 py-2 px-3">
-            <h6 className="modal-title fw-bold text-white mb-0">
+        <div className="modal-content bg-white text-dark border border-light-subtle shadow-lg overflow-hidden">
+          <div className="modal-header border-light-subtle py-2 px-3">
+            <h6 className="modal-title fw-bold text-dark mb-0">
               {title} – Official Trailer
             </h6>
             <button
               type="button"
-              className="btn btn-sm text-light p-0 border-0"
+              className="btn btn-sm text-dark p-0 border-0"
               onClick={onClose}
             >
               <FaTimes size={18} />

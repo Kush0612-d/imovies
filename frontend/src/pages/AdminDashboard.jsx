@@ -395,19 +395,19 @@ const AdminDashboard = () => {
                 <div className="col-6 col-md-4 col-lg-2">
                   <div className="glass-panel p-3 text-center">
                     <div className="text-muted small">Total Users</div>
-                    <div className="fs-3 fw-bold text-white mt-1">{stats.totalUsers}</div>
+                    <div className="fs-3 fw-bold text-dark mt-1">{stats.totalUsers}</div>
                   </div>
                 </div>
                 <div className="col-6 col-md-4 col-lg-2">
                   <div className="glass-panel p-3 text-center">
                     <div className="text-muted small">Total Movies</div>
-                    <div className="fs-3 fw-bold text-white mt-1">{stats.totalMovies}</div>
+                    <div className="fs-3 fw-bold text-dark mt-1">{stats.totalMovies}</div>
                   </div>
                 </div>
                 <div className="col-6 col-md-4 col-lg-2">
                   <div className="glass-panel p-3 text-center">
                     <div className="text-muted small">Cinemas</div>
-                    <div className="fs-3 fw-bold text-white mt-1">{stats.totalCinemas}</div>
+                    <div className="fs-3 fw-bold text-dark mt-1">{stats.totalCinemas}</div>
                   </div>
                 </div>
                 <div className="col-6 col-md-4 col-lg-2">
@@ -425,14 +425,14 @@ const AdminDashboard = () => {
                 <div className="col-6 col-md-4 col-lg-2">
                   <div className="glass-panel p-3 text-center">
                     <div className="text-muted small">Gross Revenue</div>
-                    <div className="fs-3 fw-bold text-warning mt-1">₹{stats.totalRevenue}</div>
+                    <div className="fs-3 fw-bold text-danger mt-1">₹{stats.totalRevenue}</div>
                   </div>
                 </div>
               </div>
 
               {/* Quick Admin Actions */}
               <div className="glass-panel p-4 mb-4">
-                <h5 className="fw-bold text-white mb-3">Quick Actions</h5>
+                <h5 className="fw-bold text-dark mb-3">Quick Actions</h5>
                 <div className="d-flex flex-wrap gap-2">
                   <button
                     className="btn btn-cinema-primary btn-sm d-flex align-items-center gap-1"
@@ -469,7 +469,7 @@ const AdminDashboard = () => {
       {activeTab === 'movies' && (
         <div>
           <div className="d-flex justify-content-between align-items-center mb-3">
-            <h5 className="fw-bold text-white mb-0">Movie Catalog ({moviesList.length})</h5>
+            <h5 className="fw-bold text-dark mb-0">Movie Catalog ({moviesList.length})</h5>
             <button
               className="btn btn-cinema-primary btn-sm d-flex align-items-center gap-1"
               onClick={() => {
@@ -498,7 +498,7 @@ const AdminDashboard = () => {
           </div>
 
           <div className="table-responsive glass-panel p-3">
-            <table className="table table-dark table-hover mb-0 align-middle">
+            <table className="table table-hover mb-0 align-middle">
               <thead>
                 <tr className="text-muted small">
                   <th>Poster</th>
@@ -514,10 +514,10 @@ const AdminDashboard = () => {
                 {moviesList.map(m => (
                   <tr key={m._id}>
                     <td style={{ width: '60px' }}>
-                      <img src={m.poster} alt={m.title} style={{ width: '40px', height: '55px', objectFit: 'cover' }} className="rounded" />
+                      <img src={m.poster} alt={m.title} style={{ width: '40px', height: '55px', objectFit: 'cover' }} className="rounded shadow-sm" />
                     </td>
                     <td>
-                      <div className="fw-bold text-white">{m.title}</div>
+                      <div className="fw-bold text-dark">{m.title}</div>
                       <small className="text-muted">{m.genre?.join(', ')}</small>
                     </td>
                     <td>{m.language} <span className="badge bg-secondary">{m.certification}</span></td>
@@ -560,7 +560,7 @@ const AdminDashboard = () => {
       {activeTab === 'cinemas' && (
         <div>
           <div className="d-flex justify-content-between align-items-center mb-3">
-            <h5 className="fw-bold text-white mb-0">Cinemas ({cinemasList.length})</h5>
+            <h5 className="fw-bold text-dark mb-0">Cinemas ({cinemasList.length})</h5>
             <button className="btn btn-cinema-primary btn-sm d-flex align-items-center gap-1" onClick={() => setShowCinemaModal(true)}>
               <FaPlus /> Add Cinema
             </button>
@@ -572,7 +572,7 @@ const AdminDashboard = () => {
                 <div className="glass-panel p-3">
                   <div className="d-flex justify-content-between align-items-start mb-2">
                     <div>
-                      <h5 className="fw-bold text-white mb-0">{c.name}</h5>
+                      <h5 className="fw-bold text-dark mb-0">{c.name}</h5>
                       <span className="badge bg-danger">{c.city}</span>
                     </div>
                     <button className="btn btn-sm btn-outline-danger" onClick={() => handleDeleteCinema(c._id)}>
@@ -582,7 +582,7 @@ const AdminDashboard = () => {
                   <p className="text-muted small mb-2">{c.address}</p>
                   <div className="d-flex flex-wrap gap-1">
                     {c.facilities?.map((f, i) => (
-                      <span key={i} className="badge bg-dark border border-secondary text-muted small">{f}</span>
+                      <span key={i} className="badge bg-light text-secondary border small">{f}</span>
                     ))}
                   </div>
                 </div>
@@ -596,7 +596,7 @@ const AdminDashboard = () => {
       {activeTab === 'shows' && (
         <div>
           <div className="d-flex justify-content-between align-items-center mb-3">
-            <h5 className="fw-bold text-white mb-0">Scheduled Shows ({showsList.length})</h5>
+            <h5 className="fw-bold text-dark mb-0">Scheduled Shows ({showsList.length})</h5>
             <button
               className="btn btn-cinema-primary btn-sm d-flex align-items-center gap-1"
               onClick={() => {
@@ -609,7 +609,7 @@ const AdminDashboard = () => {
           </div>
 
           <div className="table-responsive glass-panel p-3">
-            <table className="table table-dark table-hover mb-0 align-middle small">
+            <table className="table table-hover mb-0 align-middle small">
               <thead>
                 <tr className="text-muted">
                   <th>Movie</th>
@@ -624,7 +624,7 @@ const AdminDashboard = () => {
               <tbody>
                 {showsList.slice(0, 30).map(s => (
                   <tr key={s._id}>
-                    <td className="fw-bold text-white">{s.movieId?.title || 'Movie'}</td>
+                    <td className="fw-bold text-dark">{s.movieId?.title || 'Movie'}</td>
                     <td>{s.cinemaId?.name} ({s.cinemaId?.city})</td>
                     <td>{s.screenId?.screenName || 'Audi 1'}</td>
                     <td>{s.showDate}</td>
@@ -647,7 +647,7 @@ const AdminDashboard = () => {
       {activeTab === 'bookings' && (
         <div>
           <div className="d-flex justify-content-between align-items-center mb-3">
-            <h5 className="fw-bold text-white mb-0">All Bookings ({bookingsList.length})</h5>
+            <h5 className="fw-bold text-dark mb-0">All Bookings ({bookingsList.length})</h5>
             <div className="input-group" style={{ maxWidth: '300px' }}>
               <input
                 type="text"
@@ -663,7 +663,7 @@ const AdminDashboard = () => {
           </div>
 
           <div className="table-responsive glass-panel p-3">
-            <table className="table table-dark table-hover mb-0 align-middle small">
+            <table className="table table-hover mb-0 align-middle small">
               <thead>
                 <tr className="text-muted">
                   <th>Booking ID</th>
@@ -678,15 +678,15 @@ const AdminDashboard = () => {
               <tbody>
                 {bookingsList.map(b => (
                   <tr key={b._id}>
-                    <td className="font-monospace text-warning fw-bold">{b.bookingId}</td>
+                    <td className="font-monospace text-danger fw-bold">{b.bookingId}</td>
                     <td>
-                      <div className="fw-semibold text-white">{b.userId?.name || 'Customer'}</div>
+                      <div className="fw-semibold text-dark">{b.userId?.name || 'Customer'}</div>
                       <small className="text-muted">{b.userId?.email}</small>
                     </td>
                     <td>{b.movieId?.title}</td>
                     <td>{b.cinemaId?.name}</td>
                     <td>{b.seats?.map(s => s.seatNumber).join(', ')}</td>
-                    <td className="fw-bold text-white">₹{b.totalAmount}</td>
+                    <td className="fw-bold text-dark">₹{b.totalAmount}</td>
                     <td>
                       <span className={`badge ${b.bookingStatus === 'confirmed' ? 'bg-success' : 'bg-danger'}`}>
                         {b.bookingStatus}
@@ -704,7 +704,7 @@ const AdminDashboard = () => {
       {activeTab === 'users' && (
         <div>
           <div className="d-flex justify-content-between align-items-center mb-3">
-            <h5 className="fw-bold text-white mb-0">Registered Users ({usersList.length})</h5>
+            <h5 className="fw-bold text-dark mb-0">Registered Users ({usersList.length})</h5>
             <div className="input-group" style={{ maxWidth: '300px' }}>
               <input
                 type="text"
@@ -720,7 +720,7 @@ const AdminDashboard = () => {
           </div>
 
           <div className="table-responsive glass-panel p-3">
-            <table className="table table-dark table-hover mb-0 align-middle small">
+            <table className="table table-hover mb-0 align-middle small">
               <thead>
                 <tr className="text-muted">
                   <th>Name</th>
@@ -734,7 +734,7 @@ const AdminDashboard = () => {
               <tbody>
                 {usersList.map(u => (
                   <tr key={u._id}>
-                    <td className="fw-bold text-white">{u.name}</td>
+                    <td className="fw-bold text-dark">{u.name}</td>
                     <td>{u.email}</td>
                     <td>{u.phone}</td>
                     <td>
@@ -761,14 +761,14 @@ const AdminDashboard = () => {
 
       {/* ADD / EDIT MOVIE MODAL */}
       {showMovieModal && (
-        <div className="modal fade show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.85)', zIndex: 1050 }}>
+        <div className="modal fade show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)', zIndex: 1050 }}>
           <div className="modal-dialog modal-dialog-centered modal-lg">
-            <div className="modal-content bg-dark text-light border border-secondary">
-              <div className="modal-header border-secondary">
-                <h5 className="modal-title fw-bold text-white">
+            <div className="modal-content bg-white text-dark border border-light-subtle shadow-lg">
+              <div className="modal-header border-light-subtle">
+                <h5 className="modal-title fw-bold text-dark">
                   {editingMovie ? 'Edit Movie Details' : 'Add New Movie Release'}
                 </h5>
-                <button type="button" className="btn btn-sm text-light p-0 border-0" onClick={() => setShowMovieModal(false)}>
+                <button type="button" className="btn btn-sm text-dark p-0 border-0" onClick={() => setShowMovieModal(false)}>
                   <FaTimes />
                 </button>
               </div>
@@ -893,7 +893,7 @@ const AdminDashboard = () => {
                     </div>
                   </div>
                 </div>
-                <div className="modal-footer border-secondary">
+                <div className="modal-footer border-light-subtle">
                   <button type="button" className="btn btn-cinema-secondary btn-sm" onClick={() => setShowMovieModal(false)}>
                     Cancel
                   </button>
@@ -909,12 +909,12 @@ const AdminDashboard = () => {
 
       {/* ADD CINEMA MODAL */}
       {showCinemaModal && (
-        <div className="modal fade show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.85)', zIndex: 1050 }}>
+        <div className="modal fade show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)', zIndex: 1050 }}>
           <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content bg-dark text-light border border-secondary">
-              <div className="modal-header border-secondary">
-                <h5 className="modal-title fw-bold text-white">Add Cinema Multiplex</h5>
-                <button type="button" className="btn btn-sm text-light p-0 border-0" onClick={() => setShowCinemaModal(false)}>
+            <div className="modal-content bg-white text-dark border border-light-subtle shadow-lg">
+              <div className="modal-header border-light-subtle">
+                <h5 className="modal-title fw-bold text-dark">Add Cinema Multiplex</h5>
+                <button type="button" className="btn btn-sm text-dark p-0 border-0" onClick={() => setShowCinemaModal(false)}>
                   <FaTimes />
                 </button>
               </div>
@@ -967,7 +967,7 @@ const AdminDashboard = () => {
                     />
                   </div>
                 </div>
-                <div className="modal-footer border-secondary">
+                <div className="modal-footer border-light-subtle">
                   <button type="button" className="btn btn-cinema-secondary btn-sm" onClick={() => setShowCinemaModal(false)}>
                     Cancel
                   </button>
@@ -983,12 +983,12 @@ const AdminDashboard = () => {
 
       {/* SCHEDULE SHOW MODAL (With Screen Conflict Checking) */}
       {showScheduleModal && (
-        <div className="modal fade show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.85)', zIndex: 1050 }}>
+        <div className="modal fade show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)', zIndex: 1050 }}>
           <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content bg-dark text-light border border-secondary">
-              <div className="modal-header border-secondary">
-                <h5 className="modal-title fw-bold text-white">Schedule Movie Showtime</h5>
-                <button type="button" className="btn btn-sm text-light p-0 border-0" onClick={() => setShowScheduleModal(false)}>
+            <div className="modal-content bg-white text-dark border border-light-subtle shadow-lg">
+              <div className="modal-header border-light-subtle">
+                <h5 className="modal-title fw-bold text-dark">Schedule Movie Showtime</h5>
+                <button type="button" className="btn btn-sm text-dark p-0 border-0" onClick={() => setShowScheduleModal(false)}>
                   <FaTimes />
                 </button>
               </div>
@@ -1083,7 +1083,7 @@ const AdminDashboard = () => {
                     </div>
                   </div>
                 </div>
-                <div className="modal-footer border-secondary">
+                <div className="modal-footer border-light-subtle">
                   <button type="button" className="btn btn-cinema-secondary btn-sm" onClick={() => setShowScheduleModal(false)}>
                     Cancel
                   </button>

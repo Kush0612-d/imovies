@@ -1,41 +1,56 @@
 /* ========================================================
    IMovies – Movie Ticket Booking Made Simple
-   Cinematic Dark Theme Stylesheet
+   Modern Vibrant & Bright UI Theme
    ======================================================== */
 
 :root {
-  --bg-main: #0b0f19;
-  --bg-card: #131b2e;
-  --bg-surface: #1c253d;
-  --bg-glass: rgba(19, 27, 46, 0.85);
+  --bg-main: #f8fafc;
+  --bg-subtle: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-surface: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.92);
   
-  --primary-purple: #8b5cf6;
-  --primary-purple-hover: #7c3aed;
-  --primary-red: #ef4444;
-  --primary-red-hover: #dc2626;
+  --primary-gradient: linear-gradient(135deg, #ff2a5f 0%, #8b5cf6 100%);
+  --primary-purple: #7c3aed;
+  --primary-purple-hover: #6d28d9;
+  --primary-red: #ff2a5f;
+  --primary-red-hover: #e11d48;
   
   --accent-gold: #f59e0b;
-  --accent-cyan: #06b6d4;
+  --accent-cyan: #0284c7;
+  --accent-pink: #ec4899;
+  --accent-indigo: #6366f1;
   
   --seat-available: #10b981;
   --seat-available-border: #059669;
-  --seat-selected: #8b5cf6;
+  --seat-selected: #7c3aed;
   --seat-selected-border: #6d28d9;
-  --seat-booked: #374151;
-  --seat-booked-border: #4b5563;
+  --seat-booked: #cbd5e1;
+  --seat-booked-border: #94a3b8;
   --seat-premium: #f59e0b;
   
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-glow: rgba(139, 92, 246, 0.35);
+  --text-main: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --border-subtle: #e2e8f0;
+  --border-glow: rgba(124, 58, 237, 0.35);
+  
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 12px 28px -4px rgba(15, 23, 42, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
+  --shadow-hover: 0 20px 35px -5px rgba(124, 58, 237, 0.18), 0 8px 16px -4px rgba(255, 42, 95, 0.12);
 }
 
-body {
+body.bright-theme, body {
   margin: 0;
   padding: 0;
   background-color: var(--bg-main);
-  color: var(--text-main);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(255, 42, 95, 0.04) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.05) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(14, 165, 233, 0.04) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-body);
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
@@ -56,37 +71,39 @@ main {
 h1, h2, h3, h4, h5, h6, .brand-font {
   font-family: 'Outfit', sans-serif;
   letter-spacing: -0.02em;
+  color: var(--text-main);
 }
 
 /* Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-main);
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2d3748;
-  border-radius: 4px;
+  background: #cbd5e1;
+  border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-purple);
 }
 
-/* Glassmorphism navbar */
+/* Glassmorphism Bright Navbar */
 .navbar-imovies {
-  background: rgba(11, 15, 25, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
   transition: all 0.3s ease;
 }
 
 .brand-logo {
   font-weight: 800;
-  font-size: 1.6rem;
-  background: linear-gradient(135deg, #ef4444 0%, #8b5cf6 100%);
+  font-size: 1.65rem;
+  background: linear-gradient(135deg, #ff2a5f 0%, #7c3aed 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: flex;
@@ -98,77 +115,100 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 .brand-badge {
   font-size: 0.65rem;
   letter-spacing: 1px;
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: rgba(239, 68, 68, 0.2);
-  color: #ef4444;
-  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(255, 42, 95, 0.15) 0%, rgba(124, 58, 237, 0.15) 100%);
+  color: #ff2a5f;
+  font-weight: 800;
   text-transform: uppercase;
   margin-left: 4px;
+  border: 1px solid rgba(255, 42, 95, 0.25);
 }
 
-/* Custom Buttons */
-.btn-cinema-primary {
-  background: linear-gradient(135deg, #ef4444 0%, #8b5cf6 100%);
-  color: #fff;
-  border: none;
+/* Nav Links for Bright Theme */
+.navbar-imovies .nav-link {
+  color: #475569 !important;
   font-weight: 600;
-  padding: 0.55rem 1.4rem;
+  transition: all 0.2s ease;
   border-radius: 8px;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.25);
+}
+.navbar-imovies .nav-link:hover {
+  color: var(--primary-purple) !important;
+  background: rgba(124, 58, 237, 0.06);
+}
+.navbar-imovies .nav-link.active {
+  color: #7c3aed !important;
+  background: rgba(124, 58, 237, 0.1);
+  font-weight: 700;
+}
+
+/* Custom Bright Buttons */
+.btn-cinema-primary {
+  background: linear-gradient(135deg, #ff2a5f 0%, #7c3aed 100%);
+  color: #ffffff !important;
+  border: none;
+  font-weight: 700;
+  padding: 0.55rem 1.4rem;
+  border-radius: 10px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(255, 42, 95, 0.3);
 }
 .btn-cinema-primary:hover {
-  background: linear-gradient(135deg, #dc2626 0%, #7c3aed 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #e11d48 0%, #6d28d9 100%);
+  color: #ffffff !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+  box-shadow: 0 8px 22px rgba(124, 58, 237, 0.4);
 }
 
 .btn-cinema-secondary {
-  background: rgba(255, 255, 255, 0.08);
-  color: #f1f5f9;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  color: #1e293b !important;
+  border: 1px solid #e2e8f0;
   font-weight: 600;
   padding: 0.55rem 1.2rem;
-  border-radius: 8px;
-  transition: all 0.25s ease;
+  border-radius: 10px;
+  transition: all 0.22s ease;
+  box-shadow: var(--shadow-sm);
 }
 .btn-cinema-secondary:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.3);
+  background: #f8fafc;
+  color: #7c3aed !important;
+  border-color: #cbd5e1;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
 }
 
 .btn-cinema-outline {
   background: transparent;
-  color: var(--primary-purple);
-  border: 1px solid var(--primary-purple);
-  font-weight: 600;
-  border-radius: 8px;
+  color: var(--primary-purple) !important;
+  border: 2px solid var(--primary-purple);
+  font-weight: 700;
+  border-radius: 10px;
   transition: all 0.2s ease;
 }
 .btn-cinema-outline:hover {
   background: var(--primary-purple);
-  color: #fff;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
 }
 
-/* Cinema Movie Card */
+/* Movie Card in Bright Theme */
 .movie-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   height: 100%;
   position: relative;
+  box-shadow: var(--shadow-sm);
 }
 .movie-card:hover {
   transform: translateY(-8px);
-  border-color: var(--border-glow);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(139, 92, 246, 0.15);
+  border-color: rgba(124, 58, 237, 0.35);
+  box-shadow: var(--shadow-hover);
 }
 
 .movie-poster-wrap {
@@ -176,7 +216,7 @@ h1, h2, h3, h4, h5, h6, .brand-font {
   width: 100%;
   padding-top: 145%; /* 2:3 aspect ratio */
   overflow: hidden;
-  background: #1a2236;
+  background: #e2e8f0;
 }
 .movie-poster-img {
   position: absolute;
@@ -188,84 +228,90 @@ h1, h2, h3, h4, h5, h6, .brand-font {
   transition: transform 0.5s ease;
 }
 .movie-card:hover .movie-poster-img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .rating-badge {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(245, 158, 11, 0.4);
-  color: #f59e0b;
-  font-weight: 700;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  color: #d97706;
+  font-weight: 800;
   font-size: 0.85rem;
-  padding: 4px 8px;
-  border-radius: 6px;
+  padding: 4px 9px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   gap: 4px;
   z-index: 2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
 .cert-badge {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #e2e8f0;
+  top: 12px;
+  left: 12px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
   font-size: 0.72rem;
-  font-weight: 700;
-  padding: 3px 6px;
-  border-radius: 4px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
   z-index: 2;
+  letter-spacing: 0.5px;
 }
 
-/* Hero Section */
+/* Bright Hero Section */
 .hero-banner {
   position: relative;
   min-height: 480px;
   background-size: cover;
   background-position: center top;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.15);
 }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, #0b0f19 12%, rgba(11, 15, 25, 0.8) 50%, rgba(11, 15, 25, 0.3) 100%);
+  background: linear-gradient(0deg, rgba(15, 23, 42, 0.92) 15%, rgba(15, 23, 42, 0.7) 55%, rgba(15, 23, 42, 0.25) 100%);
+}
+.hero-banner h1, .hero-banner p, .hero-banner .text-white {
+  color: #ffffff !important;
 }
 
-/* Interactive Seat Layout Styles */
+/* Interactive Seat Layout Styles (Vibrant & High-Contrast) */
 .cinema-screen-container {
   perspective: 400px;
   text-align: center;
   margin: 1.5rem auto 3rem auto;
 }
 .cinema-screen {
-  height: 22px;
-  background: linear-gradient(to bottom, #93c5fd, rgba(147, 197, 253, 0.05));
+  height: 24px;
+  background: linear-gradient(to bottom, #38bdf8, rgba(56, 189, 248, 0.15));
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  box-shadow: 0 10px 25px rgba(147, 197, 253, 0.45);
+  box-shadow: 0 10px 28px rgba(56, 189, 248, 0.55);
   margin-bottom: 8px;
 }
 .cinema-screen-text {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: #94a3b8;
-  font-weight: 600;
+  color: #64748b;
+  font-weight: 700;
 }
 
 .seat-grid {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   align-items: center;
   margin: 2rem 0;
   overflow-x: auto;
@@ -274,60 +320,62 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 .seat-row {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 .seat-row-label {
   width: 28px;
-  font-weight: 700;
-  color: var(--text-muted);
+  font-weight: 800;
+  color: #475569;
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 
 .seat-btn {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px 6px 4px 4px;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px 8px 5px 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.18s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   user-select: none;
   border: 1px solid transparent;
 }
 
-/* Seat states according to Section 4: Epic 3 */
+/* Seat States in Bright Palette */
 .seat-available {
   background-color: var(--seat-available);
-  color: #fff;
+  color: #ffffff;
   border-color: var(--seat-available-border);
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.35);
 }
 .seat-available:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
+  transform: scale(1.18);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.6);
+  background-color: #059669;
 }
 
 .seat-selected {
   background-color: var(--seat-selected) !important;
-  color: #fff !important;
+  color: #ffffff !important;
   border-color: var(--seat-selected-border) !important;
-  transform: scale(1.1);
-  box-shadow: 0 0 12px rgba(139, 92, 246, 0.8);
+  transform: scale(1.15);
+  box-shadow: 0 0 16px rgba(124, 58, 237, 0.7) !important;
 }
 
 .seat-booked {
   background-color: var(--seat-booked);
-  color: #9ca3af;
-  border-color: var(--seat-booked-border);
+  color: #64748b;
+  border-color: #cbd5e1;
   cursor: not-allowed;
-  opacity: 0.65;
+  opacity: 0.8;
 }
 
 .seat-premium-badge {
-  border-top: 3px solid var(--seat-premium);
+  border-top: 3.5px solid var(--seat-premium);
 }
 
 /* Seat Legend */
@@ -335,86 +383,189 @@ h1, h2, h3, h4, h5, h6, .brand-font {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #334155;
 }
 .legend-sample {
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
 }
 
-/* Digital Ticket Styles */
+/* Digital Ticket Styles (Bright Crisp Voucher Aesthetic) */
 .digital-ticket-card {
-  background: linear-gradient(135deg, #131b2e 0%, #1a2238 100%);
-  border: 2px dashed rgba(139, 92, 246, 0.5);
-  border-radius: 16px;
+  background: #ffffff;
+  border: 2px dashed rgba(124, 58, 237, 0.6);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
   position: relative;
+  color: #0f172a;
+}
+.digital-ticket-card h4, .digital-ticket-card .text-white {
+  color: #0f172a !important;
 }
 .ticket-notch-left, .ticket-notch-right {
   position: absolute;
   top: 65%;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: var(--bg-main);
   z-index: 10;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 .ticket-notch-left {
-  left: -12px;
+  left: -13px;
 }
 .ticket-notch-right {
-  right: -12px;
+  right: -13px;
 }
 
-/* Modern Card Surfaces */
+/* Modern Card Surfaces (Pure White on Bright Canvas) */
 .glass-panel {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  color: var(--text-body);
 }
 
+/* Forms & Inputs in Bright Theme */
 .form-control-cinema {
-  background-color: #0f1523 !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  color: #fff !important;
-  border-radius: 8px !important;
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  border-radius: 10px !important;
   padding: 0.65rem 1rem !important;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 .form-control-cinema:focus {
-  border-color: var(--primary-purple) !important;
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25) !important;
+  border-color: #7c3aed !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 3.5px rgba(124, 58, 237, 0.2) !important;
+  color: #0f172a !important;
+}
+.form-control-cinema::placeholder {
+  color: #94a3b8 !important;
 }
 
+/* Bright Badges */
 .badge-now-showing {
-  background: rgba(16, 185, 129, 0.15);
-  color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.2) 100%);
+  color: #059669;
+  font-weight: 700;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
 }
 .badge-coming-soon {
-  background: rgba(245, 158, 11, 0.15);
-  color: #f59e0b;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.2) 100%);
+  color: #b45309;
+  font-weight: 700;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
 }
 
-/* City selection pill button */
+/* City Selection Pills (Bright Theme) */
 .city-pill {
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-muted);
+  padding: 7px 16px;
+  border-radius: 24px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border: 1.5px solid #e2e8f0;
+  color: #475569;
   cursor: pointer;
-  transition: all 0.2s ease;
-  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.22s ease;
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
 }
-.city-pill.active, .city-pill:hover {
-  background: var(--primary-purple);
-  color: #fff;
-  border-color: var(--primary-purple);
+.city-pill.active {
+  background: linear-gradient(135deg, #ff2a5f 0%, #7c3aed 100%) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35) !important;
+}
+.city-pill:hover:not(.active) {
+  background: #f8fafc;
+  color: #7c3aed;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
 }
 
+/* Modals for Bright Theme */
+.modal-content.bg-dark {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25) !important;
+  border-radius: 18px !important;
+}
+.modal-header, .modal-footer {
+  border-color: #e2e8f0 !important;
+}
+.modal-header .btn {
+  color: #475569 !important;
+}
+
+/* Table in Bright Theme */
+.table-dark {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+}
+.table-dark thead th {
+  background-color: #f8fafc !important;
+  color: #475569 !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+  font-weight: 700;
+}
+.table-dark tbody tr {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+.table-dark tbody tr:hover {
+  background-color: #f8fafc !important;
+}
+
+/* Dropdown Menu Bright */
+.dropdown-menu.glass-panel {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: var(--shadow-lg) !important;
+  border-radius: 14px !important;
+}
+.dropdown-menu .dropdown-item {
+  color: #334155 !important;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+}
+.dropdown-menu .dropdown-item:hover {
+  background-color: rgba(124, 58, 237, 0.08) !important;
+  color: #7c3aed !important;
+}
+
+/* Universal text utility adaptations for bright mode */
+.glass-panel .text-white,
+.movie-card .text-white,
+.table .text-white,
+body.bright-theme .text-white:not(.hero-banner .text-white):not(.btn .text-white):not(.badge .text-white) {
+  color: #0f172a !important;
+}
+
+.glass-panel .text-light,
+body.bright-theme .text-light:not(.hero-banner *):not(.btn *):not(.badge *) {
+  color: #334155 !important;
+}
+
+.glass-panel .bg-dark,
+body.bright-theme .bg-dark:not(.cert-badge) {
+  background-color: #f8fafc !important;
+  color: #1e293b !important;
+  border-color: #e2e8f0 !important;
+}

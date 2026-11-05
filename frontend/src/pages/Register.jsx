@@ -64,12 +64,12 @@ const Register = () => {
                 <FaFilm className="text-danger" />
                 <span>IMovies</span>
               </div>
-              <h4 className="fw-bold text-white mb-1">Create an Account</h4>
+              <h4 className="fw-bold text-dark mb-1">Create an Account</h4>
               <p className="text-muted small">Join IMovies for fast seat reservations and digital QR passes</p>
             </div>
 
             {error && (
-              <div className="alert alert-danger bg-danger bg-opacity-20 border-danger text-light small d-flex align-items-center gap-2 mb-3">
+              <div className="alert alert-danger bg-danger bg-opacity-20 border-danger text-dark small d-flex align-items-center gap-2 mb-3">
                 <FaExclamationTriangle className="text-danger flex-shrink-0" />
                 <span>{error}</span>
               </div>
@@ -80,7 +80,7 @@ const Register = () => {
               <div className="mb-3">
                 <label className="form-label text-muted small fw-semibold">Full Name</label>
                 <div className="input-group">
-                  <span className="input-group-text bg-dark border-secondary border-opacity-25 text-muted">
+                  <span className="input-group-text bg-light border-light-subtle text-muted">
                     <FaUser />
                   </span>
                   <input
@@ -99,7 +99,7 @@ const Register = () => {
                 <div className="col-12 col-md-6">
                   <label className="form-label text-muted small fw-semibold">Email Address</label>
                   <div className="input-group">
-                    <span className="input-group-text bg-dark border-secondary border-opacity-25 text-muted">
+                    <span className="input-group-text bg-light border-light-subtle text-muted">
                       <FaEnvelope />
                     </span>
                     <input
@@ -117,7 +117,7 @@ const Register = () => {
                 <div className="col-12 col-md-6">
                   <label className="form-label text-muted small fw-semibold">Phone Number</label>
                   <div className="input-group">
-                    <span className="input-group-text bg-dark border-secondary border-opacity-25 text-muted">
+                    <span className="input-group-text bg-light border-light-subtle text-muted">
                       <FaPhone />
                     </span>
                     <input
@@ -137,7 +137,7 @@ const Register = () => {
                 <div className="col-12 col-md-6">
                   <label className="form-label text-muted small fw-semibold">Password</label>
                   <div className="input-group">
-                    <span className="input-group-text bg-dark border-secondary border-opacity-25 text-muted">
+                    <span className="input-group-text bg-light border-light-subtle text-muted">
                       <FaLock />
                     </span>
                     <input
@@ -155,7 +155,7 @@ const Register = () => {
                 <div className="col-12 col-md-6">
                   <label className="form-label text-muted small fw-semibold">Confirm Password</label>
                   <div className="input-group">
-                    <span className="input-group-text bg-dark border-secondary border-opacity-25 text-muted">
+                    <span className="input-group-text bg-light border-light-subtle text-muted">
                       <FaLock />
                     </span>
                     <input

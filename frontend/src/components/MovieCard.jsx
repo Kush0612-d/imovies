@@ -55,14 +55,14 @@ const MovieCard = ({ movie }) => {
               movie.genre.slice(0, 2).map((g, idx) => (
                 <span
                   key={idx}
-                  className="badge bg-secondary bg-opacity-50 text-light fw-normal"
+                  className="badge bg-danger-subtle text-danger border border-danger-subtle fw-semibold"
                   style={{ fontSize: '0.7rem' }}
                 >
                   {g}
                 </span>
               ))}
             <span
-              className="badge bg-dark border border-secondary text-muted"
+              className="badge bg-light text-secondary border fw-semibold"
               style={{ fontSize: '0.7rem' }}
             >
               {movie.language || 'Hindi'}
@@ -71,7 +71,7 @@ const MovieCard = ({ movie }) => {
 
           {/* Title */}
           <h5
-            className="text-white fw-bold mb-1 text-truncate"
+            className="text-dark fw-bold mb-1 text-truncate"
             title={movie.title}
             style={{ fontSize: '1.05rem' }}
           >
@@ -88,7 +88,7 @@ const MovieCard = ({ movie }) => {
         </div>
 
         {/* Action Buttons */}
-        <div className="d-flex gap-2 mt-auto pt-2 border-top border-secondary border-opacity-25">
+        <div className="d-flex gap-2 mt-auto pt-2 border-top border-light-subtle">
           <Link
             to={`/movies/${movie._id}`}
             className="btn btn-sm btn-cinema-secondary flex-grow-1 d-flex align-items-center justify-content-center gap-1 py-2"

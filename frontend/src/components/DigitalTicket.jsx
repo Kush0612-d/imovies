@@ -19,12 +19,12 @@ const DigitalTicket = ({ booking }) => {
 
   return (
     <div className="digital-ticket-wrapper mx-auto" style={{ maxWidth: '620px' }}>
-      <div className="digital-ticket-card p-4 text-light" ref={printRef}>
+      <div className="digital-ticket-card p-4 text-dark" ref={printRef}>
         <div className="ticket-notch-left"></div>
         <div className="ticket-notch-right"></div>
 
         {/* Header */}
-        <div className="d-flex justify-content-between align-items-center pb-3 border-bottom border-secondary border-opacity-50">
+        <div className="d-flex justify-content-between align-items-center pb-3 border-bottom border-light-subtle">
           <div className="d-flex align-items-center gap-2">
             <div className="brand-logo" style={{ fontSize: '1.4rem' }}>
               <FaFilm className="text-danger" />
@@ -38,7 +38,7 @@ const DigitalTicket = ({ booking }) => {
             <div className="small text-muted text-uppercase" style={{ letterSpacing: '1px' }}>
               Booking Reference
             </div>
-            <div className="font-monospace fw-bold text-warning">{booking.bookingId}</div>
+            <div className="font-monospace fw-bold text-danger">{booking.bookingId}</div>
           </div>
         </div>
 
@@ -49,45 +49,45 @@ const DigitalTicket = ({ booking }) => {
             <img
               src={movie.poster || 'https://picsum.photos/300/450'}
               alt={movie.title}
-              className="img-fluid rounded shadow-sm border border-secondary border-opacity-25"
+              className="img-fluid rounded shadow-sm border border-light-subtle"
               style={{ objectFit: 'cover', height: '150px', width: '100%' }}
             />
           </div>
 
           {/* Ticket Information */}
           <div className="col-8 col-sm-9">
-            <h4 className="fw-bold text-white mb-1">{movie.title || 'Movie Title'}</h4>
+            <h4 className="fw-bold text-dark mb-1">{movie.title || 'Movie Title'}</h4>
             <div className="d-flex gap-2 align-items-center text-muted small mb-2">
               <span className="badge bg-secondary">{movie.language || 'Hindi'}</span>
-              <span className="badge bg-dark border border-secondary">{movie.certification || 'UA'}</span>
+              <span className="badge bg-light text-secondary border">{movie.certification || 'UA'}</span>
               <span>{movie.duration ? `${Math.floor(movie.duration / 60)}h ${movie.duration % 60}m` : '2h 15m'}</span>
             </div>
 
-            <div className="d-flex align-items-center gap-1 text-light small mb-2">
+            <div className="d-flex align-items-center gap-1 text-dark small mb-2">
               <FaMapMarkerAlt className="text-danger flex-shrink-0" />
               <span className="fw-semibold">{cinema.name || 'Cinema Multiplex'}</span>
               <span className="text-muted">({cinema.city || 'City'})</span>
             </div>
 
-            <div className="badge bg-primary bg-opacity-20 text-primary border border-primary border-opacity-25 mb-1">
+            <div className="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 mb-1">
               {screen.screenName || 'Audi 1 - Dolby Atmos'}
             </div>
           </div>
         </div>
 
         {/* Date, Time & Seats Bar */}
-        <div className="row g-2 p-3 rounded bg-black bg-opacity-40 border border-secondary border-opacity-25 mb-4 text-center">
-          <div className="col-4 border-end border-secondary border-opacity-25">
+        <div className="row g-2 p-3 rounded bg-light border border-light-subtle mb-4 text-center">
+          <div className="col-4 border-end border-light-subtle">
             <div className="small text-muted text-uppercase">Date</div>
-            <div className="fw-bold text-white mt-1 d-flex align-items-center justify-content-center gap-1">
+            <div className="fw-bold text-dark mt-1 d-flex align-items-center justify-content-center gap-1">
               <FaCalendarAlt className="text-danger" size={13} />
               <span>{showDate}</span>
             </div>
           </div>
 
-          <div className="col-4 border-end border-secondary border-opacity-25">
+          <div className="col-4 border-end border-light-subtle">
             <div className="small text-muted text-uppercase">Time</div>
-            <div className="fw-bold text-white mt-1 d-flex align-items-center justify-content-center gap-1">
+            <div className="fw-bold text-dark mt-1 d-flex align-items-center justify-content-center gap-1">
               <FaClock className="text-primary" size={13} />
               <span>{startTime}</span>
             </div>
@@ -95,17 +95,17 @@ const DigitalTicket = ({ booking }) => {
 
           <div className="col-4">
             <div className="small text-muted text-uppercase">Seats</div>
-            <div className="fw-bold text-warning mt-1" style={{ fontSize: '1.05rem' }}>
+            <div className="fw-bold text-danger mt-1" style={{ fontSize: '1.05rem' }}>
               {seatsList}
             </div>
           </div>
         </div>
 
         {/* Footer with QR Code & Verification */}
-        <div className="d-flex justify-content-between align-items-center pt-3 border-top border-secondary border-opacity-50">
+        <div className="d-flex justify-content-between align-items-center pt-3 border-top border-light-subtle">
           <div>
             <div className="small text-muted">Amount Paid</div>
-            <div className="fs-5 fw-bold text-white">₹{booking.totalAmount?.toFixed(2)}</div>
+            <div className="fs-5 fw-bold text-dark">₹{booking.totalAmount?.toFixed(2)}</div>
             <div className="small text-muted" style={{ fontSize: '0.75rem' }}>
               Inc. GST & Booking Convenience Fee
             </div>
